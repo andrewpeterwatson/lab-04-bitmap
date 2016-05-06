@@ -1,7 +1,7 @@
 'use strict';
 const fs = require('fs');
 
-exports.bitmapHeader = function(image, callback) {
+exports.bitmapHeader = function(image, callback) { //function for reading bitmap data
   fs.readFile(image, (err, data) => {
     if (err) {
       console.err;
@@ -12,10 +12,7 @@ exports.bitmapHeader = function(image, callback) {
   });
 };
 
-
-//create a write module
-
-exports.newbitmapfile = function(buffer, callback) {
+exports.newbitmapfile = function(buffer, callback) {//takes in a buffer and makes a new one
   fs.writeFile('newimage.bmp', buffer, (err) => {
     if (err) {
       console.err;
